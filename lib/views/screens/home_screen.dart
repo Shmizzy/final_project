@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:yardex/services/auth_controller_provider.dart';
+import 'package:yardex/providers/auth_controller_provider.dart';
+import 'package:yardex/views/widgets/map.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -10,16 +11,27 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Yardex Welcome')),
+        title: const Text('Yardex Welcome'),
+        centerTitle: true,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () async {
-            await ref.read(authControllerProvider).destroyToken();
-            context.go('/');
-          },
-          child: Text('Logout'),
-        ),
+      body: Stack(
+        children: [
+          const YardexMap(),
+          Positioned(
+            top: MediaQuery.of(context).padding.top,
+            right: 0,
+            left: 0,
+            child: Center(
+              child: ElevatedButton(
+                onPressed: () async {
+                  await ref.read(authControllerProvider).destroyToken();
+                  context.go('/');
+                },
+                child: Text('Logout'),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

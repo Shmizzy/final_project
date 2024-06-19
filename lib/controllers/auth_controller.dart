@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:yardex/models/user.dart';
 import 'package:http/http.dart' as http;
-import 'package:yardex/services/session_provider.dart';
+import 'package:yardex/providers/session_provider.dart';
 
 class AuthController {
   GlobalKey<FormState> formKey;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:yardex/controllers/auth_controller.dart';
-import 'package:yardex/services/auth_controller_provider.dart';
+import 'package:yardex/providers/auth_controller_provider.dart';
 
 class LoginForm extends ConsumerWidget {
   final _formKey = GlobalKey<FormState>();
