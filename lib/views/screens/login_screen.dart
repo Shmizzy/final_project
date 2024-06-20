@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:yardex/views/widgets/login_form.dart';
+import 'package:yardex/views/widgets/new_login_form.dart';
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

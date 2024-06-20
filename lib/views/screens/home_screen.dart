@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:yardex/providers/auth_controller_provider.dart';
+import 'package:yardex/controllers/auth_provider.dart';
 import 'package:yardex/views/widgets/map.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -24,7 +24,7 @@ class HomeScreen extends ConsumerWidget {
             child: Center(
               child: ElevatedButton(
                 onPressed: () async {
-                  await ref.read(authControllerProvider).destroyToken();
+                  await ref.read(authNotifierProvider.notifier).signOut();
                   context.go('/');
                 },
                 child: Text('Logout'),

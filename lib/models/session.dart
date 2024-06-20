@@ -1,5 +1,6 @@
 class UserSession {
   final String? token;
+  final String? id;
 
-  UserSession({this.token});
+  UserSession({this.token, this.id});
 }

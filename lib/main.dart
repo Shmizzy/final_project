@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:yardex/providers/session_provider.dart';
+import 'package:yardex/controllers/auth_provider.dart';
 import 'package:yardex/views/screens/auth_screen.dart';
 import 'package:yardex/views/screens/home_screen.dart';
 import 'package:yardex/views/screens/login_screen.dart';
 import 'package:yardex/views/screens/register_screen.dart';
+import 'package:yardex/views/screens/service_request_screen.dart';
+import 'package:yardex/views/screens/show_request_screen.dart';
 
 void main() {
   runApp(ProviderScope(child: YardexApp()));
@@ -14,7 +16,7 @@ void main() {
 class YardexApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final session = ref.watch(sessionProvider);
+    final session = ref.watch(authNotifierProvider);
 
     final _router = GoRouter(routes: [
       GoRoute(
@@ -25,6 +27,8 @@ class YardexApp extends ConsumerWidget {
       GoRoute(
           path: '/register',
           builder: (context, state) => const RegisterScreen()),
+      GoRoute(path: '/service-request', builder: (context, state) => const ServiceRequestScreen()),
+      GoRoute(path: '/show-request', builder: (context, state) => const ShowRequestScreen()),
     ]);
 
     return MaterialApp.router(
