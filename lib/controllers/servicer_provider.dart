@@ -7,7 +7,7 @@ part 'servicer_provider.g.dart';
 
 @riverpod
 class ServicerNotifier extends _$ServicerNotifier {
-  final String _servicerUrl = 'http://10.0.2.2:3000/marker/profile/';
+  final String _servicerUrl = 'http://10.0.2.2:3000/markers/';
 
   @override
   Servicer? build() {
@@ -24,8 +24,7 @@ class ServicerNotifier extends _$ServicerNotifier {
       print('Response body: ${res.body}');
       if (res.statusCode == 200) {
         final Map<String, dynamic> decodedJson = json.decode(res.body);
-        final Map<String, dynamic> profileData = decodedJson['fetchProfile'];
-        state = Servicer.fromJson(profileData);
+        state = Servicer.fromJson(decodedJson);
       } else
         print('failed to load servicer data ${res.body}');
     } catch (e) {

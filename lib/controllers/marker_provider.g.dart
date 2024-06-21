@@ -6,7 +6,7 @@ part of 'marker_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$markerNotifierHash() => r'3e6fa545f10d999c437eaa5b4f2b84540840e063';
+String _$markerNotifierHash() => r'f335ff9f6a177def1841390a9900f07290e0efb2';
 
 /// See also [MarkerNotifier].
 @ProviderFor(MarkerNotifier)

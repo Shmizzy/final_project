@@ -15,7 +15,7 @@ class CustomMarker {
   factory CustomMarker.fromJson(Map<String, dynamic> json) {
     return CustomMarker(
       id: json['_id'],
-      servicerId: json['servicer'],
+      servicerId: json['_id'],
       latitude: json['location']['coordinates'][1],
       longitude: json['location']['coordinates'][0],
       status: json['status'],

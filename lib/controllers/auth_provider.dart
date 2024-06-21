@@ -51,7 +51,7 @@ class AuthNotifier extends _$AuthNotifier {
         await _storage.write(key: 'id', value: id);
         state = UserSession(token: token, id: id);
       } else
-        print('Failed to create user: ${res.body}');
+        print('Failed to login user: ${res.body}');
     } catch (e) {
       throw Exception('Error trying to register... $e');
     }

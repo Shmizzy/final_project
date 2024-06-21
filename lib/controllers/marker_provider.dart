@@ -7,7 +7,7 @@ part 'marker_provider.g.dart';
 
 @riverpod
 class MarkerNotifier extends _$MarkerNotifier {
-  final String _markerUrl = 'http://10.0.2.2:3000/marker/';
+  final String _markerUrl = 'http://10.0.2.2:3000/markers/';
 
   @override
   List<CustomMarker> build() {
